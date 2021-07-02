@@ -23,7 +23,7 @@ export default {
         />
         <div :class="$style.links">
           <a
-            href="https://docs.thebrewery.dev/maltjs/quickstart"
+            href="https://github.com/bencodezen/vue-enterprise-boilerplate"
             target="_blank"
             >Documentation</a
           >
