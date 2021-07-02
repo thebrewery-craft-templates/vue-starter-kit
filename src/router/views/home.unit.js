@@ -6,7 +6,11 @@ describe('@views/home', () => {
   })
 
   it('renders an element', () => {
-    const { element } = shallowMountView(Home)
-    expect(element.textContent).toContain('Home Page')
+    const wrapper = shallowMountView(Home)
+    const { element } = wrapper
+
+    expect(wrapper.findAll('img').length).toBe(2)
+    expect(element.textContent).toContain('Documentation')
+    expect(element.textContent).toContain('Powered by')
   })
 })

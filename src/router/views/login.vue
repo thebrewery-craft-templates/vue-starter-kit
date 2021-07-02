@@ -56,35 +56,58 @@ export default {
 
 <template>
   <Layout>
-    <form :class="$style.form" @submit.prevent="tryToLogIn">
-      <BaseInputText
-        v-model="username"
-        name="username"
-        :placeholder="placeholders.username"
-      />
-      <BaseInputText
-        v-model="password"
-        name="password"
-        type="password"
-        :placeholder="placeholders.password"
-      />
-      <BaseButton :disabled="tryingToLogIn" type="submit">
-        <BaseIcon v-if="tryingToLogIn" name="sync" spin />
-        <span v-else>
-          Log in
-        </span>
-      </BaseButton>
-      <p v-if="authError">
-        There was an error logging in to your account.
-      </p>
-    </form>
+    <div :class="$style.centered">
+      <div :class="$style.content">
+        <form :class="$style.form" @submit.prevent="tryToLogIn">
+          <BaseInputText
+            v-model="username"
+            name="username"
+            :placeholder="placeholders.username"
+          />
+          <BaseInputText
+            v-model="password"
+            name="password"
+            type="password"
+            :placeholder="placeholders.password"
+          />
+          <BaseButton :disabled="tryingToLogIn" type="submit">
+            <BaseIcon v-if="tryingToLogIn" name="sync" spin />
+            <span v-else>
+              Log in
+            </span>
+          </BaseButton>
+          <p v-if="authError">
+            There was an error logging in to your account.
+          </p>
+        </form>
+      </div>
+    </div>
   </Layout>
 </template>
 
 <style lang="scss" module>
 @import '@design';
 
+.centered {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 .form {
+  min-width: $size-content-width-min;
+  max-width: $size-content-width-max;
   text-align: center;
 }
 </style>

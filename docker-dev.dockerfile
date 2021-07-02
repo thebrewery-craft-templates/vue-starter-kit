@@ -6,10 +6,10 @@ WORKDIR /app
 
 # Copy dependency-related files
 COPY package.json ./
-COPY yarn.lock ./
+COPY package-lock.json ./
 
 # Install project dependencies
-RUN yarn install
+RUN npm install
 
 # Expose ports 8080, which the dev server will be bound to
 EXPOSE 8080
