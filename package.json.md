@@ -22,7 +22,7 @@ This field allows you to define commands that can be run from the terminal and s
 "dev": "vue-cli-service serve"
 ```
 
-The name is `dev`, allowing you to run the script using `yarn dev`. When the script is run, it will execute the code: `vue-cli-service serve`. In this case, `vue-cli-service` is a binary installed to `node_modules/.bin`, provided by our `@vue/cli-service` dev dependency. All scripts in `package.json` have access to both globally installed binaries and those provided by local dependencies.
+The name is `dev`, allowing you to run the script using `npm run dev`. When the script is run, it will execute the code: `vue-cli-service serve`. In this case, `vue-cli-service` is a binary installed to `node_modules/.bin`, provided by our `@vue/cli-service` dev dependency. All scripts in `package.json` have access to both globally installed binaries and those provided by local dependencies.
 
 ## [`gitHooks`](https://github.com/yyx990803/yorkie#yorkie)
 
@@ -32,9 +32,9 @@ This project is currently configured to run checks defined in `lint-staged.confi
 
 ## [`dependencies`](https://docs.npmjs.com/files/package.json#dependencies)
 
-This field allows you to define dependencies that will be included in your bundled source code. Running `yarn add` will add dependencies to this list.
+This field allows you to define dependencies that will be included in your bundled source code. Running `npm install` will add dependencies to this list.
 
-Since changes to these dependencies directly affect the code you ship, they're all locked to specific versions rather than using version ranges. Somewhere between a weekly and monthly basis, it's recommended to run `yarn outdated` to see what new versions have been released, then review the changelogs for each outdated dependency to determine:
+Since changes to these dependencies directly affect the code you ship, they're all locked to specific versions rather than using version ranges. Somewhere between a weekly and monthly basis, it's recommended to run `npm outdated` to see what new versions have been released, then review the changelogs for each outdated dependency to determine:
 
 - Whether you want to upgrade.
 
@@ -42,17 +42,17 @@ Since changes to these dependencies directly affect the code you ship, they're a
 
 - Whether upgrading might change your application's roadmap (e.g. a new feature may open possibilities that were previously inconceivable, unfeasible, or not worth the time).
 
-Once you've determined how you'd like to proceed, you can update these versions manually and re-run `yarn` to install the new versions.
+Once you've determined how you'd like to proceed, you can update these versions manually and re-run `npm install` to install the new versions.
 
 ## [`devDependencies`](https://docs.npmjs.com/files/package.json#devdependencies)
 
-This field allows you to define dev dependencies, which are _not_ included in your bundled source code, but instead used in development for code compilation/transformation, development servers, tests, and other development tasks. Running `yarn add --dev` will add dependencies to this list.
+This field allows you to define dev dependencies, which are _not_ included in your bundled source code, but instead used in development for code compilation/transformation, development servers, tests, and other development tasks. Running `npm install --dev` will add dependencies to this list.
 
 A few notable conventions:
 
-- Instead of using `^`/`~` to specify version ranges, we're using `x` as a wildcard. For example, `1.2.x` will use the latest patch release of version `1.2`. The `x` notation tends to be much more intuitive to developers and `yarn.lock` already ensures a minimum patch version when one is needed.
+- Instead of using `^`/`~` to specify version ranges, we're using `x` as a wildcard. For example, `1.2.x` will use the latest patch release of version `1.2`. The `x` notation tends to be much more intuitive to developers and `package-lock.json` already ensures a minimum patch version when one is needed.
 
-- All dev dependencies using stable versions (e.g. _not_ `alpha`, `beta`, `rc`, `next`, etc) are locked to a minor version (e.g. `1.2.x`). This allows dev dependency bugs to be automatically fixed with `yarn upgrade`, while still requiring major/minor version upgrades to be done manually. It's strongly recommended to always check changelogs before upgrading to a new major or minor version. With a new major version, there are likely to be breaking changes requiring updates to your project's non-source code. With a new minor version, there are often new features that are important to be aware of, because they could improve the productivity of your team.
+- All dev dependencies using stable versions (e.g. _not_ `alpha`, `beta`, `rc`, `next`, etc) are locked to a minor version (e.g. `1.2.x`). This allows dev dependency bugs to be automatically fixed with `npm upgrade`, while still requiring major/minor version upgrades to be done manually. It's strongly recommended to always check changelogs before upgrading to a new major or minor version. With a new major version, there are likely to be breaking changes requiring updates to your project's non-source code. With a new minor version, there are often new features that are important to be aware of, because they could improve the productivity of your team.
 
 - Any dev dependencies using pre-release versions point to a specific version, rather than a version range, because any new version of pre-release software could contain breaking changes.
 
@@ -68,7 +68,7 @@ This package is locked to a specific commit until version >=5.3 is released, whi
 
 ## [`engines`](https://docs.npmjs.com/files/package.json#engines)
 
-This field allows you to define specific versions for globally installed runtimes and tooling, such as [Node](https://nodejs.org) and [Yarn](https://yarnpkg.com). Ensuring that everyone on your team meets a minimum version threshold can vastly simplify debugging issues that only some developers experience.
+This field allows you to define specific versions for globally installed runtimes and tooling, such as [Node](https://nodejs.org). Ensuring that everyone on your team meets a minimum version threshold can vastly simplify debugging issues that only some developers experience.
 
 ## [`browserlist`](https://flaviocopes.com/package-json/#browserslist)
 
