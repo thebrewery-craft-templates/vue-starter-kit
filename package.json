@@ -25,7 +25,8 @@
     "test:ci": "run-s test:unit:ci test:e2e",
     "new": "cross-env HYGEN_TMPLS=generators hygen new",
     "docs": "vuepress dev",
-    "docker": "docker-compose exec dev npm"
+    "docker": "docker-compose exec dev npm",
+    "start": "vue-cli-service serve"
   },
   "gitHooks": {
     "pre-commit": "cross-env PRE_COMMIT=true lint-staged"
@@ -34,15 +35,27 @@
     "@fortawesome/fontawesome-svg-core": "1.2.27",
     "@fortawesome/free-solid-svg-icons": "5.12.1",
     "@fortawesome/vue-fontawesome": "0.1.9",
+    "@vue/cli-plugin-babel": "4.2.x",
+    "@vue/cli-plugin-e2e-cypress": "4.2.x",
+    "@vue/cli-plugin-eslint": "4.2.x",
+    "@vue/cli-plugin-unit-jest": "4.2.x",
+    "@vue/cli-service": "^4.2.x",
+    "@vue/eslint-config-prettier": "6.0.x",
+    "@vue/eslint-config-standard": "5.1.x",
+    "@vue/test-utils": "1.0.0-beta.31",
     "axios": "0.19.2",
     "core-js": "3.6.4",
     "date-fns": "2.10.0",
+    "eslint": "6.8.x",
     "lodash": "4.17.15",
     "normalize.css": "8.0.1",
     "nprogress": "0.2.0",
+    "sass": "1.26.x",
+    "sass-loader": "8.0.x",
     "vue": "2.6.11",
     "vue-meta": "2.3.3",
     "vue-router": "3.1.6",
+    "vue-template-compiler": "2.6.11",
     "vuex": "3.1.2"
   },
   "devDependencies": {
