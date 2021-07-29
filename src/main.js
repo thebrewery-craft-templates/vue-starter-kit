@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import router from '@router'
 import store from '@state/store'
+import Parse from 'parse'
 import App from './app.vue'
 
 // Globally register all `_base`-prefixed components
@@ -14,6 +15,14 @@ if (process.env.VUE_APP_TEST === 'e2e') {
   // Ensure tests fail when Vue emits an error.
   Vue.config.errorHandler = window.Cypress.cy.onUncaughtException
 }
+
+// Your Parse initialization configuration goes here
+const PARSE_APPLICATION_ID = process.env.VUE_APP_PARSE_APPLICATION_ID || 'xxxxx'
+const PARSE_SERVER_URL =
+  process.env.VUE_APP_PARSE_SERVER_URL || 'https://xxxxx/parse/'
+const PARSE_JAVASCRIPT_KEY = process.env.VUE_APP_PARSE_JAVASCRIPT_KEY || 'xxxxx'
+Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY)
+Parse.serverURL = PARSE_SERVER_URL
 
 const app = new Vue({
   router,

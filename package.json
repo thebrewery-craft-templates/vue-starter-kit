@@ -50,6 +50,7 @@
     "lodash": "4.17.15",
     "normalize.css": "8.0.1",
     "nprogress": "0.2.0",
+    "parse": "^3.3.0",
     "sass": "1.26.x",
     "sass-loader": "8.0.x",
     "vue": "2.6.11",
