@@ -23,7 +23,7 @@ export default {
           :class="$style.responsiveImage"
         />
         <div>
-          <h1>Welcome to your Craft React App!</h1>
+          <h1>Welcome to your Craft Vue App!</h1>
           <p>
             To get started, edit <code>./app.js</code> and paste the
             <code>App ID</code>, <code>JavaScript Key</code> and
