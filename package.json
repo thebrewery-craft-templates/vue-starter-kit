@@ -21,7 +21,7 @@
     "test:unit:watch": "npm run test:unit --watch --notify --notifyMode change",
     "test:unit:ci": "npm run test:unit --coverage --ci",
     "test:e2e": "cross-env VUE_APP_TEST=e2e vue-cli-service test:e2e --headless",
-    "test": "run-s test:unit test:e2e",
+    "test": "run-s test:unit",
     "test:ci": "run-s test:unit:ci test:e2e",
     "new": "cross-env HYGEN_TMPLS=generators hygen new",
     "docs": "vuepress dev",
