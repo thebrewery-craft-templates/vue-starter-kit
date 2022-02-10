@@ -11,7 +11,7 @@
     "lint:stylelint": "stylelint --fix",
     "lint:markdownlint": "markdownlint",
     "lint:prettier": "prettier --write --loglevel warn",
-    "lint:all:eslint": "npm run lint:eslint --ext .js,.vue .",
+    "lint:all:eslint": "npm run lint:eslint \"src/**/*.{js,vue}\"",
     "lint:all:stylelint": "npm run lint:stylelint \"src/**/*.{vue,scss}\"",
     "lint:all:markdownlint": "npm run lint:markdownlint \"docs/*.md\" \"*.md\"",
     "lint:all:prettier": "npm run lint:prettier \"**/*.{js,json,css,scss,vue,html,md}\"",
