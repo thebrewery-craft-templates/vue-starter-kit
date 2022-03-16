@@ -15,10 +15,10 @@ RUN npm config set unsafe-perm true
 COPY . /src
 
 # Install dependencies
-RUN npm install
+RUN yarn
 
 # Build static web
-RUN npm run build
+RUN yarn build
 
 # Production Image
 FROM node:lts-alpine
