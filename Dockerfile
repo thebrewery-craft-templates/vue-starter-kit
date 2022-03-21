@@ -1,6 +1,6 @@
 # You should always specify a full version here to ensure all of your developers
 # are running the same version of Node.
-FROM node:lts-alpine AS base
+FROM docker.io/node:lts-alpine AS base
 
 RUN mkdir -p /src
 WORKDIR /src
@@ -21,7 +21,7 @@ RUN yarn
 RUN yarn build
 
 # Production Image
-FROM node:lts-alpine
+FROM docker.io/node:lts-alpine
 
 # The base node image sets a very verbose log level.
 ENV NPM_CONFIG_LOGLEVEL warn
